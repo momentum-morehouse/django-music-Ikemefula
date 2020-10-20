@@ -1,7 +1,7 @@
 # Django Music Collection
 
 Create an application to keep track of all the music albums you own. You can choose what fields each album should have, but it should have at least these three:
-
+<!-- FIELDS TO ADD -->
 - title
 - artist
 - year released
@@ -17,6 +17,15 @@ Your Django app should allow you to do the following:
 Your app should have at least minimal styling using a CSS library like Tachyons, Material, or Semantic.
 
 A good place to start is planning out your model and making sure you can make an Album object in the console. Make some simple wireframes to sketch out the different functions of the app on the list above, and the urls (and corresponding view functions) you will need to make each page show up. Start with the home page.
+
+<!-- 
+1. planning out your model
+2. make an Album object in the console
+3. Make some simple wireframes to sketch out the different functions of the app on the list above
+4. Sketch out the urls (and corresponding view functions) 
+5. you will need to make each page show up. 
+      Start with the home page. 
+      -->
 
 ## Spicy options 🌶️🌶️🌶️
 
@@ -101,3 +110,5 @@ This project was generated from the Momentum Django project template. This templ
 - A `.gitignore` file is provided.
 - [Pipenv](https://pypi.org/project/pipenv/) is used to manage dependencies.
 
+<!-- create branches -->
+git checkout -b create-classes
