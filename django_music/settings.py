@@ -63,6 +63,7 @@ INSTALLED_APPS = [
 
     # Project-specific
     'users',
+    'TraccTracc',
 ]
 
 MIDDLEWARE = [
