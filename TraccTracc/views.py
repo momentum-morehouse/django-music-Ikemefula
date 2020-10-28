@@ -3,6 +3,7 @@ from .models import Album
 from .forms import AlbumForm
 
 
+
 # Create your views here.
 def list_albums(request):
     albums = Album.objects.all()
