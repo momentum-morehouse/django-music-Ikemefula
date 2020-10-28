@@ -16,6 +16,14 @@ def add_album(request):
     else:
         form = AlbumForm(data=request.POST)
         if form.is_valid():
+            data = form.cleaned_data
+            title = data.get('title')
+            artist = data.get('artisrt')
+            year_made = data.get('year_made')
+            image_url = data.get('image_url')
+            artist = Artist.objects.get_or_create(name=artist)
+            album = Album.objects.create()
+
             form.save()
             return redirect(to='list_albums')
 
@@ -34,7 +42,7 @@ def edit_album(request, pk):
 
     return render(request, "albums/edit_album.html", {
         "form": form,
-        "album": contact
+        "album": album
     })
 
 
@@ -46,67 +54,3 @@ def delete_album(request, pk):
 
     return render(request, "albums/delete_albums.html",
                   {"album": album})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-def contact_detail(request, pk):
-    contact = get_object_or_404(Contact, pk=pk)
-    if request.method == 'GET':
-        form = NoteForm()
-    return render(request, "contacts/contact_detail.html", {"contact": contact, "form":form})
-
-def add_note(request, contact_pk):
-    contact = get_object_or_404(Contact, pk=contact_pk)
-    if request.method == 'POST':
-        form = NoteForm(data=request.POST)
-        if form.is_valid():
-            note = form.save(commit=False)
-            note.contact = contact
-            note.save()
-            return redirect(to='contact_detail', pk=contact_pk)
-
-    return render(request, "contacts/contact_detail.html", {"form": form})
-    
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -10,5 +10,3 @@ class AlbumForm(forms.ModelForm):
             'artist',
             'year_released',
         ]
-
-
